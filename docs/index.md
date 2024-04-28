@@ -19,6 +19,9 @@
 # MkDocs Material Template - Jonast.Gabler/mkdocs-material
 This is a template repository for anyone that wants to use the MkDocs Material Theme.
 
+
+[tetest.md](test.md)
+
 ## Getting Started
 To get started, first clone this template by clicking on the Green button labeled [`Use this template`][use].  
 On the new screen, give your repository a name and make sure to check `Include all branches`. This will make sure that the `gh-pages` branch is included, or otherwhise publishing the docs to GitHub Pages could cause errors (See [Troubleshooting](#troubleshooting)).
