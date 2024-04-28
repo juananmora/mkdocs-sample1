@@ -177,8 +177,25 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   palette:
+      - media: "(prefers-color-scheme)"
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
 
-  
+      # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default 
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+
+      # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/brightness-4
+          name: Switch to system preference
+ 
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
     # | The "scheme" option is used to define the Color Scheme used by Material.                           |
@@ -190,7 +207,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-scheme              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-    scheme: 'slate'
+  scheme: 'default'
     
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -202,7 +219,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color             |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-    primary: 'indigo'
+  primary: 'custom'
     
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -212,7 +229,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-    accent: 'indigo'
+  accent: 'custom'
     
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
@@ -383,8 +400,8 @@ theme:
 # | - https://www.mkdocs.org/user-guide/configuration/#extra_css                                           |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-#extra_css:
-
+extra_css:
+  - stylesheets/extra.css
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
 # | Similar to the "extra_css" option does the "extra_javascript" option allow you to set custom JS files  |
