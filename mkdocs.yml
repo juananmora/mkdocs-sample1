@@ -76,7 +76,7 @@ docs_dir: docs/
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 repo_name: juananmora/mkdocs-sample1
-repo_url: https://juananmora.github.io/mkdocs-sample1/
+repo_url: https://github.com/juananmora/mkdocs-sample1
 #edit_uri: tree/master/docs # Uncomment to define a different URI/URL for the "edit" option
 
 # +--------------------------------------------------------------------------------------------------------+
