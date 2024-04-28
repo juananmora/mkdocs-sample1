@@ -116,7 +116,7 @@ plugins:
 
 
 theme:
-
+  logo: assets/senyal.jpg
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The "name" option is where you define the theme to use.                                              |
