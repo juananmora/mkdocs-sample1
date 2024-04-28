@@ -18,7 +18,7 @@
 
 [gh-pages]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-# MkDocs Material Template
+# MkDocs Material Template - Jon
 This is a template repository for anyone that wants to use the MkDocs Material Theme.
 
 ## Getting Started
