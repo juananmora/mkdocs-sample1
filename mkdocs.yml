@@ -27,7 +27,7 @@
 # | - https://www.mkdocs.org/user-guide/configuration/#site_url                                            |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-site_name: MkDocs Template
+site_name: CTTI MAT
 site_description: 'A template for future MkDocs wikis'
 site_author: 'juananmora'
 #site_url: 'https://www.andre601.ch/mkdocs-template' # Uncomment to set a canonical URL
@@ -94,9 +94,9 @@ repo_url: https://github.com/juananmora/mkdocs-sample1
 # +--------------------------------------------------------------------------------------------------------+
 nav:
 - Welcome: index.md
-- Test: test.md
-- About:
-    - About Page: test.md
+- Mermaid: test.md
+- Test Template:
+    - Template Page: about.md
 
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
