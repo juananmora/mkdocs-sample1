@@ -20,7 +20,7 @@ on:
     - master
     #
     # If your repository would have releases should you uncomment the below lines
-    # in order to ignore pushes caused by newly created releases.
+    # in order to ignore pushes caused by newly created releases. 
     #
     #tags-ignore:
     #- '**'
