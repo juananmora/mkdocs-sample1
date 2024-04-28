@@ -40,6 +40,4 @@ jobs:
         python -m pip install -r requirements.txt
     - name: Deploy Files
       run: |
-        git config user.name "juananmora"
-        git config user.email "juananmora@hotmail.com"
         mkdocs gh-deploy --force
