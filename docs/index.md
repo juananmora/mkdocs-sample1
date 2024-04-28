@@ -16,7 +16,7 @@
 
 [LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
 
-# MkDocs Material Template
+# MkDocs Material Template - Jon
 This is a template repository for anyone that wants to use the MkDocs Material Theme.
 
 ## Getting Started
