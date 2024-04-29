@@ -95,8 +95,17 @@ repo_url: https://github.com/juananmora/mkdocs-sample1
 nav:
 - Welcome: index.md
 - Mermaid: test.md
-- Test Template:
-    - Template Page: about.md
+- About: about.md
+- Type of Tests:
+    - Selenium: tests/selenium.md
+    - JMeter: tests/jmeter.md
+    - Postman: tests/postman.md
+- Jenkins:
+    - Selenium: jenkins/selenium.md
+    - JMeter: jenkins/jmeter.md
+    - Postman: jenkins/postman.md
+    - OWasp: jenkins/owasp.md
+
 
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
@@ -299,11 +308,11 @@ theme:
   #
   #- announce.dismiss # Adds a "X" button to dismiss a news banner/mark it as read.*
   
-  # Header
+  #Header
   #
   #- header.autohide # Hide header when user scrolls past a specific point.
   
-  # Navigation:
+  #Navigation:
   #
   #- navigation.expand      # Expand all collapsable sections.
   #- navigation.instant     # Instant loading pages.
@@ -390,30 +399,30 @@ theme:
   #    example: 'octicons/beaker-16'
   #    quote: 'octicons/quote-16'
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | With the "extra_css" option can you add your own (S)CSS files to enhance the documentation.            |
-# |                                                                                                        |
-# | The path to the file is relative to the "docs_dir".                                                    |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra_css                                           |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-extra_css:
-  - stylesheets/extra.css
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | Similar to the "extra_css" option does the "extra_javascript" option allow you to set custom JS files  |
-# | to add extra featurues.                                                                                |
-# |                                                                                                        |
-# | The path to the file is relative to the "docs_dir".                                                    |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra_javascript                                    |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-#extra_javascript:
+  # +--------------------------------------------------------------------------------------------------------+
+  # |                                                                                                        |
+  # | With the "extra_css" option can you add your own (S)CSS files to enhance the documentation.            |
+  # |                                                                                                        |
+  # | The path to the file is relative to the "docs_dir".                                                    |
+  # |                                                                                                        |
+  # | Read More:                                                                                             |
+  # | - https://www.mkdocs.org/user-guide/configuration/#extra_css                                           |
+  # |                                                                                                        |
+  # +--------------------------------------------------------------------------------------------------------+
+  extra_css:
+    - assets/css/extra.css
+  # +--------------------------------------------------------------------------------------------------------+
+  # |                                                                                                        |
+  # | Similar to the "extra_css" option does the "extra_javascript" option allow you to set custom JS files  |
+  # | to add extra featurues.                                                                                |
+  # |                                                                                                        |
+  # | The path to the file is relative to the "docs_dir".                                                    |
+  # |                                                                                                        |
+  # | Read More:                                                                                             |
+  # | - https://www.mkdocs.org/user-guide/configuration/#extra_javascript                                    |
+  # |                                                                                                        |
+  # +--------------------------------------------------------------------------------------------------------+
+  #extra_javascript:
 
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
@@ -514,9 +523,40 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - markdown.extensions.meta:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.footnotes:
+      PLACE_MARKER: "<!-- Footnotes -->"
+  - markdown.extensions.toc:
+      permalink: true
+  - markdown.extensions.md_in_html:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+  - pymdownx.magiclink:
+  - pymdownx.smartsymbols:
+  - pymdownx.snippets:
+      base_path: 'theme/snippets'
+  - pymdownx.superfences:
+  - pymdownx.tilde:
+  - pymdownx.blocks.admonition:
+      types:
+        - note
+        - abstract
+        - info
+        - tip
+        - success
+        - question
+        - warning
+        - failure
+        - danger
+        - bug
+        - example
+        - quote
+  - pymdownx.blocks.details:
+  - pymdownx.blocks.tab:
+      alternate_style: true
   #- pymdownx.arithmex:
   #- pymdownx.b64:
   #- pymdownx.betterem:
