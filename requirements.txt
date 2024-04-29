@@ -13,7 +13,7 @@ babel~=2.10
 colorama~=0.4
 paginate~=0.5
 regex>=2022.4
-requests~=2.26
+requests~=2.31
 mkdocstrings==0.21.2
 mkdocstrings-python==1.0.0
 
