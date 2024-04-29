@@ -121,7 +121,7 @@ nav:
 plugins:
   - search
   # third party plugins
-  - mkdocstrings
+  #- mkdocstrings
 
 
 theme:
@@ -545,7 +545,7 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
- 
+
   #- pymdownx.arithmex:
   #- pymdownx.b64:
   #- pymdownx.betterem:
