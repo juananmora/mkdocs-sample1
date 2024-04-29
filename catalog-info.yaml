@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "matdoc"
+  description: "this is a documentation space"
+  annotations:
+    github.com/project-slug: juananmora/mkdocs-sample1
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: documentation
+  lifecycle: experimental
+  owner: "team-a"
