@@ -16,5 +16,7 @@ regex>=2022.4
 requests~=2.26
 mkdocstrings==0.21.2
 mkdocstrings-python==1.0.0
+mkdocs-techdocs-core
+
 
 
