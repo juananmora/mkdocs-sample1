@@ -126,7 +126,12 @@ plugins:
 
 
 theme:
-  logo: assets/senyal.jpg
+  logo: assets/idbh.png
+  #favicon: assests/senyal.jpg
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The "name" option is where you define the theme to use.                                              |
@@ -171,7 +176,7 @@ theme:
   # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#favicon             |
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
-  #favicon: 'assets/images/favicon.png'
+  favicon: 'assets/senyal.jpg'
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
@@ -395,9 +400,9 @@ theme:
   # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#logo                |
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
-  icon:
-    logo: 'material/library'
-    repo: 'material/library'
+  #icon:
+  #  logo: 'material/library'
+  #  repo: 'material/library'
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
