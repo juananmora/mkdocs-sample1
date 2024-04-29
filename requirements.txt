@@ -14,7 +14,7 @@ colorama~=0.4
 paginate~=0.5
 regex>=2022.4
 requests~=2.26
-mkdocstrings==0.21.2
+mkdocstrings==0.25.0
 mkdocstrings-python==1.0.0
 
 
