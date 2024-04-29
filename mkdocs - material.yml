@@ -186,34 +186,24 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   palette:
-    - scheme: default
-      primary: amber
-      accent: red
-      font:
-       code: Roboto Mono
-      toggle:
-        icon: material/brightness-7 
-        name: Switch to dark mode
+      - media: "(prefers-color-scheme)"
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
 
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: red
-      accent: amber
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+      # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default 
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
 
-
-
-    # +---------------------------------------------------------------------------------------------------+
-    # |                                                                                                    |
-    # | The "primary" option is used to define the Color of the application header on hover.             |
-    # |                                                                                                    |
-    # | Read More: https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color    |
-    # +---------------------------------------------------------------------------------------------------+
-    #primary-color: "light-green"
-
-
+      # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/brightness-4
+          name: Switch to system preference
  
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -226,7 +216,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-scheme              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-  #scheme: 'default'
+  scheme: 'default'
     
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -238,7 +228,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color             |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-  #primary: 'orange'
+  primary: 'orange'
     
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -248,7 +238,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-  #accent: 'orange'
+  accent: 'orange'
     
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
@@ -263,7 +253,9 @@ theme:
   # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/                              |
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
-
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
