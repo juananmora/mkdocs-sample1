@@ -97,9 +97,15 @@ nav:
 - Mermaid: test.md
 - About: about.md
 - Type of Tests:
-    - Selenium: tests/selenium.md
-    - JMeter: tests/jmeter.md
-    - Postman: tests/postman.md
+  -   Test Funcionales:
+      - Selenium: tests/selenium.md
+      - Playwright: test.md
+  -   Test Performance:
+      - JMeter: tests/jmeter.md
+      - K6: test.md
+  -   Test API:
+      - SOAPUI: tests/test.md
+      - Postman: tests/postman.md
 - Jenkins:
     - Selenium: jenkins/selenium.md
     - JMeter: jenkins/jmeter.md
@@ -323,7 +329,7 @@ theme:
     - content.action.view
     - content.code.annotate
     - content.code.copy
-    # - content.code.select
+    - content.code.select
     # - content.footnote.tooltips
     # - content.tabs.link
     - content.tooltips
@@ -335,7 +341,7 @@ theme:
     # - navigation.instant.prefetch
     # - navigation.instant.progress
     # - navigation.prune
-    - navigation.sections
+    #- navigation.sections
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
@@ -344,6 +350,7 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+    - navigation.path
     # - toc.integrate 
  
   # Announce
