@@ -1,4 +1,4 @@
-mkdocs-material==9.5.19
+mkdocs-material==9.5.30
 
 # Requirements for core
 jinja2~=3.0
