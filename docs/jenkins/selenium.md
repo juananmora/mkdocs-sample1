@@ -57,6 +57,11 @@ flowchart TD
     J --> K[Fin Pipeline]
 ```
 
+### 2. Execució de Proves
+??? tip "Tecnologies Utilitzades"
+    - Selenium per a proves funcionals
+    - Maven com a gestor de dependències
+    - Extent per a informes executives
 
 ```mermaid
 flowchart LR
@@ -92,13 +97,6 @@ flowchart LR
     Ejecución_Pruebas --> Reportes
     Reportes --> Evaluación
 ```
-
-### 2. Execució de Proves
-??? tip "Tecnologies Utilitzades"
-    - Selenium per a proves funcionals
-    - Maven com a gestor de dependències
-    - Allure per a informes executives
-
 
 ### 3. Gestió de Resultats
 
