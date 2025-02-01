@@ -8,7 +8,7 @@ mkdocs-material-extensions~=1.3
 pygments~=2.17
 pymdown-extensions~=10.2
 
-# Requirements for plugins
+# Requirements for plugins s
 babel~=2.14
 colorama~=0.4
 paginate~=0.5

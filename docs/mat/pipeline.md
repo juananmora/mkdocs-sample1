@@ -4,7 +4,7 @@
 ## Fases del Procés
 
 !!! note "Procés Automatitzat"
-    El procés de Continuous Deployment està completament automatitzat, assegurant una entrega ràpida i consistent.
+    El procés de Continuous Deployment està completament automatitzat, assegurant una entrega ràpida i consistent!
 
 <figure markdown>
   ![Diagrama de Continuous Deployment](../images/pipeline.png){ loading=lazy }
