@@ -58,6 +58,90 @@ Notificació automàtica dels resultats del desplegament i les proves als intere
 
 Sistema integrat de gestió d'incidències que s'activa automàticament en cas de detectar problemes durant qualsevol fase del procés.
 
+## Paràmetres d'Entrada de la Pipeline
+
+Els següents paràmetres s’utilitzen per configurar l'execució de la pipeline i s’obtenen del Jenkinsfile:
+
+### MAT-PROVES-FUNCIONAL
+
+| **Paràmetre**             | **Valor per defecte**                                                               | **Descripció**                                                        |
+|---------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| `FUNC_REPO_URL`           | `https://github.com/ctti-dev/3632.00-mat-functional-tests`                          | URL del repositori de proves funcionals                               |
+| `FUNC_BRANCH`             | `master`                                                                            | Rama del repositori de proves funcionals                              |
+| `FUNC_ENV_TO_TEST`        | `Produccio`                                                                         | Entorn per executar les proves funcionals                             |
+| `FUNC_URL_APP`            | `https://qualitat.solucions.gencat.cat`                                               | URL de l'aplicació objectiu de les proves funcionals                    |
+| `FUNC_UMBRAL`             | `20`                                                                                | Umbral de fallades per a les proves funcionals                          |
+| `FUNC_QUALITY_GATE`       | `false`                                                                             | Activar/desactivar el Quality Gate per les proves funcionals            |
+| `FUNC_JIRA_PROJECT_KEY`   | (Cadena buida)                                                                      | Clau del projecte Jira associat a les proves funcionals                 |
+| `FUNC_JIRA_ISSUE_KEY`     | (Cadena buida)                                                                      | Clau de la incidencia Jira (Test Plan) per a les proves funcionals         |
+
+### MAT-PROVES-RENDIMENT
+
+| **Paràmetre**             | **Valor per defecte**                                                      | **Descripció**                                                                                     |
+|---------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| `PERF_REPO_URL`           | `https://github.com/ctti-dev/3632.00-mat-performance-tests`                | URL del repositori de proves de rendiment                                                          |
+| `PERF_BRANCH`             | `master`                                                                   | Rama del repositori de proves de rendiment                                                         |
+| `PERF_PROTOCOL`           | `https`                                                                    | Protocol de connexió per a les proves de rendiment                                                 |
+| `PERF_URL_APP`            | `qualitat.solucions.gencat.cat`                                            | URL de l'aplicació objectiu per a proves de rendiment                                               |
+| `PERF_ENV_TO_TEST`        | `Produccio`                                                                | Entorn per executar les proves de rendiment                                                        |
+| `PERF_TEST_DURATION`      | `10`                                                                       | Durada de les proves de rendiment (en minuts)                                                      |
+| `PERF_RAMP_UP_TIME`       | `60`                                                                       | Temps de rampa per a augment gradual de càrrega                                                    |
+| `PERF_THREAD_COUNT`       | `20`                                                                       | Nombre de fils (hilos) a simular en la prova de rendiment                                          |
+| `PERF_QUALITY_GATE`       | `false`                                                                    | Activar/desactivar el Quality Gate per a proves de rendiment                                       |
+| `PERF_UMBRAL`             | `20`                                                                       | Umbral de fallades per a les proves de rendiment                                                   |
+| `PERF_JIRA_PROJECT_KEY`   | (Cadena buida)                                                             | Clau del projecte Jira per a proves de rendiment                                                   |
+| `PERF_JIRA_ISSUE_KEY`     | (Cadena buida)                                                             | Clau de la incidència Jira per al Test Plan de proves de rendiment                                   |
+
+### MAT-PROVES-API
+
+| **Paràmetre**             | **Valor per defecte**                                                      | **Descripció**                                                                          |
+|---------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `API_REPO_URL`            | `https://github.com/ctti-dev/3632.00-mat-api-tests.git`                    | URL del repositori de codi font per a proves d'API                                       |
+| `API_BRANCH`              | `master`                                                                   | Rama del repositori de proves d'API                                                     |
+| `API_APP_NAME`            | `conference`                                                               | Nom de l'aplicació objectiu per a les proves d'API                                        |
+| `API_ENV_TO_TEST`         | *(Utilitza opcions: Desenvolupament, Integracio, Preproduccio, Produccio)*   | Entorns disponibles per a provar l'API                                                  |
+| `API_JIRA_PROJECT_KEY`    | `DEVSECOPS2`                                                               | Clau del projecte Jira per a les proves d'API                                             |
+| `API_JIRA_ISSUE_KEY`      | `DEVSECOPS2-251`                                                           | Clau de la incidència Jira (Test Plan) per a les proves d'API                              |
+
+---
+## Diagrama de Flux dels Paràmetres
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart TD
+A[Paràmetres d'Entrada Pipeline] --> B[Funcional]
+A --> C[Rendiment]
+A --> D[API]
+B --> B1[FUNC_REPO_URL]
+B --> B2[FUNC_BRANCH]
+B --> B3[FUNC_ENV_TO_TEST]
+B --> B4[FUNC_URL_APP]
+B --> B5[FUNC_UMBRAL]
+B --> B6[FUNC_QUALITY_GATE]
+B --> B7[FUNC_JIRA_PROJECT_KEY]
+B --> B8[FUNC_JIRA_ISSUE_KEY]
+
+C --> C1[PERF_REPO_URL]
+C --> C2[PERF_BRANCH]
+C --> C3[PERF_PROTOCOL]
+C --> C4[PERF_URL_APP]
+C --> C5[PERF_ENV_TO_TEST]
+C --> C6[PERF_TEST_DURATION]
+C --> C7[PERF_RAMP_UP_TIME]
+C --> C8[PERF_THREAD_COUNT]
+C --> C9[PERF_QUALITY_GATE]
+C --> C10[PERF_UMBRAL]
+C --> C11[PERF_JIRA_PROJECT_KEY]
+C --> C12[PERF_JIRA_ISSUE_KEY]
+
+D --> D1[API_REPO_URL]
+D --> D2[API_BRANCH]
+D --> D3[API_APP_NAME]
+D --> D4[API_ENV_TO_TEST]
+D --> D5[API_JIRA_PROJECT_KEY]
+D --> D6[API_JIRA_ISSUE_KEY]
+```
+
 !!! tip "Millora Contínua"
     El procés de CD està en constant evolució. Si tens suggeriments de millora, no dubtis en compartir-los!
 
