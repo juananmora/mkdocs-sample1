@@ -96,6 +96,8 @@ nav:
 - Welcome: index.md
 - Mermaid: test.md
 - About: about.md
+- MAT: mat/index.md
+- Pipeline: mat/pipeline.md
 - Type of Tests:
   -   Test Funcionales:
       - Selenium: tests/selenium.md
