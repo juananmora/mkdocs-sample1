@@ -85,13 +85,13 @@
 | Eina | Funció | Descripció |
 |------|--------|------------|
 | :simple-sonarqube: Sonarqube | Anàlisi Estàtic | Avaluació de qualitat de codi |
-| :material-test-tube: HP UFT | Proves Funcionals | Automatització de test funcionals |
-| :material-graph: ALM Octane | Gestió de Proves | Seguiment i gestió de casos de test |
+| :simple-selenium: Selenium | Proves Funcionals | Automatització de test funcionals |
+| :simple-jira: Jira | Gestió de Proves | Seguiment i gestió de casos de test |
+| :simple-apachejmeter: JMeter | Proves de Rendiment | Avaluació del rendiment sota càrrega |
+| :simple-postman: Postman | Proves d'API | Validació i automatització d'APIs |
+| :simple-owasp: OWASP ZAP | Proves de Seguretat | Detecció de vulnerabilitats en aplicacions web |
 
 !!! success "Transformació Digital"
     El MAT impulsa la millora contínua, facilitant el lliurament de solucions tecnològiques robustes i fiables.
 
 [Explora el Continuous Deployment :material-arrow-right:](../mat/pipeline.md){ .md-button .md-button--primary }
-
-
-
