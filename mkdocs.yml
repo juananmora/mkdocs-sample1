@@ -93,12 +93,11 @@ repo_url: https://github.com/juananmora/mkdocs-sample1
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 nav:
-- Welcome: index.md
+- Welcome: mat/index.md
 - Mermaid: test.md
 - About: about.md
-- MAT: mat/index.md
-- Pipeline: mat/pipeline.md
 - Type of Tests:
+  -   Pipeline: mat/pipeline.md
   -   Test Funcionales:
       - Selenium: tests/selenium.md
       - Playwright: test.md

@@ -3,18 +3,6 @@
 ## Header
 ![Generalitat de Catalunya Logo](../images/gencat.png)
 
-### Navegación
-- [Confluence](https://totgencat.atlassian.net/wiki/spaces/DEVSECOPS/overview?homepageId=50037232)
-- [Jira](https://cstd-ctti-sandbox-198.atlassian.net/jira/software/c/projects/DEVSECOPS2/boards/399)
-- [Azure](https://portal.azure.com)
-- [Github](https://github.com/enterprises/gencat)
-- [Qualitat](https://qualitat.solucions.gencat.cat/)
-
-## Serveis del framework
-- [Selenium Grid](https://preproduccio.intranet.mat.qualitat.solucions.gencat.cat/selenium)
-- [Jenkins](https://preproduccio.mat.qualitat.solucions.gencat.cat/jenkins)
-- [Grafana](https://preproduccio.intranet.mat.qualitat.solucions.gencat.cat/grafana)
-
 ## Benvinguts/des al MAT
 El **Marc d'Automatització de Testing (MAT)** és una iniciativa innovadora desenvolupada pel Centre de Telecomunicacions i Tecnologies de la Informació (CTTI) de la Generalitat de Catalunya. Aquest marc representa un salt qualitatiu en la manera com abordem les proves de programari en els nostres projectes tecnològics.
 
