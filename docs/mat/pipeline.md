@@ -1,6 +1,5 @@
-# MAT - Continuous Deployment i Testing
-
-## Continuous Deployment Preproducció - Microserveis
+# MAT - Continuous Deployment i Testing Preproducció - Microserveis { .md-typeset }
+![Jenkins Pipeline](../images/jenkins-pipeline.png){ align=right width="300" }
 
 <figure markdown>
   ![Diagrama de Continuous Deployment](../images/pipeline.png){ loading=lazy }
