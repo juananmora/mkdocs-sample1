@@ -44,17 +44,26 @@ I --> Z
 
 ### 1. Configuració Inicial
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 flowchart TD
-    A[Inicio Pipeline] --> B[Validar Issue en JIRA]
-    B --> C[Checkout del Repositorio]
-    C --> D[Ejecutar Pruebas]
-    D --> E[Convertir Reporte HTML a Markdown]
-    E --> F[Subir Resultados a JIRA]
-    F --> G[Publicar Reporte HTML en Jenkins]
-    G --> H[Subir Reporte a JIRA]
-    H --> I[Adjuntar Reporte Markdown a GitHub (Pull Request)]
-    I --> J[Evaluar Umbral (Quality Gate)]
-    J --> K[Fin Pipeline]
+    A[Inici Pipeline] --> B[Validació Paràmetres]
+    B --> C[Checkout Codi]
+    C --> D[Execució Proves Selenium]
+    D --> E[Pujada Resultats JIRA]
+    E --> F[Publicació Informe HTML]
+    F --> G{Avaluació Quality Gate}
+    G -->|Èxit| H[Notificació Èxit]
+    G -->|Error| I[Notificació Error]
+    H --> Z([Fi])
+    I --> Z
+
+    classDef stage fill:#4CAF50,stroke:#388E3C,color:white;
+    classDef decision fill:#FFC107,stroke:#FFA000;
+    classDef error fill:#F44336,stroke:#D32F2F,color:white;
+    class A,B,C,D,E,F stage
+    class G decision
+    class I,H error
+
 ```
 
 ### 2. Execució de Proves
@@ -64,6 +73,7 @@ flowchart TD
     - Extent per a informes executives
 
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 flowchart LR
     subgraph Validaciones_Iniciales [Validaciones Iniciales]
         A1[Verificar Parámetros Obligatorios]
