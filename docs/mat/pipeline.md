@@ -1,18 +1,6 @@
 # MAT - Continuous Deployment i Testing
 
 
-### Navegación
-- [Confluence](https://totgencat.atlassian.net/wiki/spaces/DEVSECOPS/overview?homepageId=50037232)
-- [Jira](https://cstd-ctti-sandbox-198.atlassian.net/jira/software/c/projects/DEVSECOPS2/boards/399)
-- [Azure](https://portal.azure.com)
-- [Github](https://github.com/enterprises/gencat)
-- [Qualitat](https://qualitat.solucions.gencat.cat/)
-
-## Procés de Testing
-- [API Testing](api-testing.html)
-- [Functional Testing](functional-testing.html)
-- [Performance Testing](performance-testing.html)
-
 ## Continuous Deployment Preproducció - Microserveis
 ![Diagrama de Continuous Deployment](../images/pipeline.png)
 
