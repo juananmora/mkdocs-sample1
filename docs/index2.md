@@ -1,14 +1,14 @@
 # Benvinguts al MAT - Marc d'Automatització de Testing
 
 <div class="hero" markdown>
-![MAT Logo](../images/mat_logo.png){ align=center width="200" }
+![MAT Logo](./images/mat_logo.png){ align=center width="200" }
 
 ## Transformant el Futur del Desenvolupament de Software
 
 El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI per optimitzar, estandarditzar i agilitzar el procés de proves. Amb eines avançades i metodologies modernes, el MAT garanteix la qualitat i fiabilitat del programari.
 
-[Explora les Funcionalitats :material-arrow-right-circle:](../features/overview.md){ .md-button .md-button--primary }
-[Documentació Tècnica :material-book:](../docs/index.md){ .md-button }
+[Explora les Funcionalitats :material-arrow-right-circle:](./features/overview.md){ .md-button .md-button--primary }
+[Documentació Tècnica :material-book:](./docs/index.md){ .md-button }
 </div>
 
 ---
@@ -49,7 +49,7 @@ El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI
 
 <div class="grid cards" markdown>
 
--   ![Actualització 1.0](../images/update1.png){ align=left width="100" }
+-   ![Actualització 1.0](./images/jenkins-pipeline.png){ align=left width="100" }
     **Llançament de la Versió 1.0**
     
     ---
@@ -58,7 +58,7 @@ El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI
     
     [:fontawesome-solid-arrow-right: Llegir més](../news/version1.md)
 
--   ![Integració amb Jenkins](../images/jenkins_integration.png){ align=left width="100" }
+-   ![Integració amb Jenkins](./images/jenkins-pipeline.png){ align=left width="100" }
     **Integració Completa amb Jenkins**
     
     ---
