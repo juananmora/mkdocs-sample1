@@ -1,7 +1,6 @@
 # MAT - Marc d'Automatització de Testing
 
-## Header
-![Generalitat de Catalunya Logo](../images/gencat.png)
+
 
 ## Benvinguts/des al MAT
 El **Marc d'Automatització de Testing (MAT)** és una iniciativa innovadora desenvolupada pel Centre de Telecomunicacions i Tecnologies de la Informació (CTTI) de la Generalitat de Catalunya. Aquest marc representa un salt qualitatiu en la manera com abordem les proves de programari en els nostres projectes tecnològics.
@@ -19,5 +18,5 @@ El **Marc d'Automatització de Testing (MAT)** és una iniciativa innovadora des
 
 Us convidem a explorar les diferents eines i recursos que el MAT posa a la vostra disposició. Junts, estem construint el futur digital de Catalunya.
 
-[Continuous Deployment Pipeline](../html/pipeline.html)
+[Continuous Deployment Pipeline](../mat/pipeline.md)
 

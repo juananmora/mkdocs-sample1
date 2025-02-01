@@ -1,7 +1,5 @@
 # MAT - Continuous Deployment i Testing
 
-## Header
-![Generalitat de Catalunya Logo](../images/gencat.png)
 
 ### Navegación
 - [Confluence](https://totgencat.atlassian.net/wiki/spaces/DEVSECOPS/overview?homepageId=50037232)
