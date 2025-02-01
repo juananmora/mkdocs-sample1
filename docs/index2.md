@@ -71,22 +71,6 @@ El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI
 
 ---
 
-## Diagrama del Flux de Treball -
-
-```mermaid
-%%{init: {'theme':'neutral'}}%%
-flowchart TD
-A[Inici] --> B[Checkout Codi]
-B --> C[Configuració Entorn]
-C --> D[Execució Proves Automatitzades]
-D --> E{Resultats}
-E -->|Èxit| F[Desplegament a Preproducció]
-E -->|Error| G[Notificació i Correcció]
-text
-```
-
----
-
 ## Recursos Addicionals
 
 <div class="grid cards" markdown>
