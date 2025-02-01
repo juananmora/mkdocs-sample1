@@ -33,7 +33,7 @@ sequenceDiagram
     Jenkins->>JIRA: Puja resultats TestNG
     Jenkins->>InfluxDB: Emmagatzema mètriques
     Jenkins->>GitHub: Notifica PR
-
+```
 
 ## Paràmetres del Pipeline
 
