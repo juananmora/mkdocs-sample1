@@ -1,64 +1,49 @@
-# MAT Functional Tests: Job
+# Automatización de Pruebas con Selenium
 
-Use the MAT framework to execute functional tests on demand.
+<div class="grid cards" markdown>
 
-> The Git repo where your functional tests live NEEDS to be a fork of the official MAT template.
+- :material-web: Compatibilidad multi-navegador
+- :material-robot: Framework de testing web
+- :material-chart-line: Integración CI/CD
 
-## Parameters
+</div>
 
-- `repositorio` :: URL where functional tests are hosted.
-- `entorno` :: Environments to test in.
-- `rama` :: Branch of Test Repository.
-- `urlapp` :: Application URL.
-- `umbral` :: Test Failed Threshold.
-- `quality_gate` :: Enable or disable quality gate
-- `JIRA_PROJECT_KEY` :: Project key of the project in Jira
-- `JIRA_ISSUE_KEY` :: Test plan key in Jira.
+## Flujo de Trabajo en MAT
 
-## Diagram
+```mermaid
+graph TD
+A[Jenkins inicia ejecución] --> B[Clona repositorio]
+B --> C[Configura entorno de pruebas]
+C --> D[Ejecuta tests Selenium]
+D --> E{¿Pruebas exitosas?}
+E -->|Sí| F[Genera reporte Allure]
+E -->|No| G[Notifica fallos]
+F --> H[Despliega a preproducción]
 
-                      Start
-                        |
-                        v
-                 Check Parameters
-                        |
-                        v
-                   Checkout Repo
-                        |
-                        v
-                    Run Tests
-                        |
-                        v
-             Jira Upload Results
-                        |
-                        v
-           Jenkins Publish Report
-                        |
-                        v
-            Jira Upload Report
-                        |
-                        v
-              Thresholds Evaluation
-                        |
-                        v
-                 End of Pipeline
+```
 
-## Stages
+### Implementación
+1. **Configuración de Entorno**:
+   - Instalar drivers específicos para cada navegador
+   - Configurar Jenkins para ejecución paralela
 
-The main pipeline is executed within a podTemplate that uses a Maven container. The pipeline flow is as follows:
+2. **Desarrollo de Pruebas**:
+   - Crear scripts usando Page Object Model
+   - Implementar validaciones de UI/UX
 
-1. `checkout-repo` :: Checkout the Git repo from within the `repositorio` URL + the `rama` branch.
-2. `run-test` :: Tests are executed using Maven. The previously defined parameters are passed to Maven as variables. (`entorno`, `rama`, `jira_project_key`, `jira_issue_key` ) 
-3. `jira-uploade-result` :: Test results are uploaded to Jira.
-4. `jenkins-publish-report` :: An HTML report is published from a specific directory..
-5. `'jira-upload-report` :: A ZIP file containing the report is uploaded to Jira.
-6. `thresholds-eval` :: Evaluate the ratio of succeeded-failed tests against the threshold specified by the `umbral` param.
+3. **Integración Continua**:
+   - Programar ejecución nocturna en Jenkins
+   - Configurar triggers ante cambios en repositorio
 
-## Jira functions. Integration Jenkins - Jira
+4. **Reportes**:
+   - Generar dashboards interactivos con Allure
+   - Integrar métricas de cobertura de pruebas
 
-Functions provide mechanisms to integrate Jenkins with Jira and maintain a record of the pipeline's state.
+---
 
-- `run_jira_cmd` :: Executes a block of code only if certain Jira parameters are provided.
-- `jira_add_comment` :: Adds a comment to a Jira issue.
-- `jira_upload_results` :: Uploads test results to Jira.
-- `jira_upload_report` :: Uploads a ZIP file as an attachment to Jira.
+![Selenium Grid](images/selenium-grid.png){ align=right width=300 }
+
+### Ventajas Clave
+- Pruebas cross-browser automatizadas
+- Detección temprana de regresiones visuales
+- Soporte para múltiples lenguajes (Java, Python, C#)
