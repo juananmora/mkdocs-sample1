@@ -74,38 +74,33 @@ flowchart TD
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
-flowchart LR
-    subgraph Validaciones_Iniciales [Validaciones Iniciales]
-        A1[Verificar Parámetros Obligatorios]
-        A2[Validar Issue en JIRA]
-        A1 --> A2
-    end
+flowchart TD
+A([Inici]) --> B[Validació Paràmetres]
+B --> C[Checkout Codi]
+C --> D[Validar Issue JIRA]
+D --> E[Executar Proves Maven]
+E --> F[Pujar Resultats JIRA]
+F --> G[Publicar Informe HTML]
+G --> H[Pujar Informe JIRA]
+H --> I{{QUALITY_GATE?}}
+I -->|Activat| J[Avaluar Umbral]
+I -->|Desactivat| K[Saltar Control]
+J --> L{Errors < UMBRAL?}
+L -->|Sí| M[Notificar Èxit]
+L -->|No| N[Aturar Pipeline]
+K --> M
+M --> O[Adjuntar MD a GitHub PR]
+N --> O
+O --> P([Fi])
+classDef stage fill:#4CAF50,stroke:#388E3C,color:white;
+classDef decision fill:#FFC107,stroke:#FFA000;
+classDef error fill:#F44336,stroke:#D32F2F,color:white;
+class A,B,C,D,E,F,G,H,J stage
+class I,L decision
+class N error
 
-    subgraph Ejecución_Pruebas [Ejecución de Pruebas]
-        B1[Checkout del Repositorio]
-        B2[Ejecutar Pruebas con Maven]
-        B3[Convertir HTML a Markdown]
-        B1 --> B2
-        B2 --> B3
-    end
 
-    subgraph Reportes [Publicación de Reportes]
-        C1[Subir Resultados a JIRA]
-        C2[Publicar Reporte HTML en Jenkins]
-        C3[Subir Reporte Comprimido a JIRA]
-        C4[Adjuntar Markdown a Pull Request de GitHub]
-        C1 --> C2
-        C2 --> C3
-        C3 --> C4
-    end
 
-    subgraph Evaluación [Evaluación de Calidad]
-        D1[Evaluar Umbral (Quality Gate)]
-    end
-
-    Validaciones_Iniciales --> Ejecución_Pruebas
-    Ejecución_Pruebas --> Reportes
-    Reportes --> Evaluación
 ```
 
 ### 3. Gestió de Resultats
