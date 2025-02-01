@@ -97,7 +97,7 @@ Slack --> [*]
 ```
 
 ## Mètriques Clau
-
+```
 {
 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 "description": "Mètriques d'Execució",
@@ -115,7 +115,7 @@ Slack --> [*]
 "color": {"field": "metric", "legend": null}
 }
 }
-
+```
 
 ## Integració amb Ecosistema MAT
 

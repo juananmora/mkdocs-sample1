@@ -76,8 +76,6 @@ def login(self, user, passw):
     - Proves independents i aïllades
     - Captura d'evidències en fallades
 
-![Selenium Grid](images/selenium-grid.png){ align=right width="400" }
-
 </div>
 
 #### Flux d'Execució
