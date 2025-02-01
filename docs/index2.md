@@ -1,7 +1,5 @@
-# Benvinguts al MAT - Marc d'Automatització de Testing
-
 <div class="hero" markdown>
-![MAT Logo](./images/gencat.png){ align=center width="400" }
+![MAT Logo](./images/gencat.png){ align=center width="45000" }
 
 ## Transformant el Futur del Desenvolupament de Software
 
