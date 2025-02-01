@@ -18,18 +18,22 @@ Aquest pipeline Jenkins automatitza l'execució de proves funcionals integrat al
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
-flowchart TD
-A([Inici]) --> B[Validació de Paràmetres]
-B --> C[Checkout Codi]
-C --> D[Execució de Proves]
-D --> E[Pujada de Resultats a JIRA]
-E --> F[Publicació d'Informes]
-F --> G{Avaluació Quality Gate}
-G -->|Èxit| H[Notificació d'Èxit]
-G -->|Error| I[Notificació d'Error]
-H --> Z([Fi])
-I --> Z
-```
+sequenceDiagram
+    participant Jenkins
+    participant GitHub
+    participant Kubernetes
+    participant JIRA
+    participant InfluxDB
+
+    Jenkins->>GitHub: Clona repositori
+    GitHub-->>Jenkins: Codi font
+    Jenkins->>Kubernetes: Desplega Pod Maven
+    Kubernetes-->>Jenkins: Confirmació
+    Jenkins->>Jenkins: Executa proves Selenium
+    Jenkins->>JIRA: Puja resultats TestNG
+    Jenkins->>InfluxDB: Emmagatzema mètriques
+    Jenkins->>GitHub: Notifica PR
+
 
 ## Paràmetres del Pipeline
 
@@ -42,36 +46,7 @@ I --> Z
 
 ## Etapes Principals
 
-### 1. Configuració Inicial
-```mermaid
-%%{init: {'theme':'neutral'}}%%
-flowchart TD
-    A[Inici Pipeline] --> B[Validació Paràmetres]
-    B --> C[Checkout Codi]
-    C --> D[Execució Proves Selenium]
-    D --> E[Pujada Resultats JIRA]
-    E --> F[Publicació Informe HTML]
-    F --> G{Avaluació Quality Gate}
-    G -->|Èxit| H[Notificació Èxit]
-    G -->|Error| I[Notificació Error]
-    H --> Z([Fi])
-    I --> Z
-
-    classDef stage fill:#4CAF50,stroke:#388E3C,color:white;
-    classDef decision fill:#FFC107,stroke:#FFA000;
-    classDef error fill:#F44336,stroke:#D32F2F,color:white;
-    class A,B,C,D,E,F stage
-    class G decision
-    class I,H error
-
-```
-
-### 2. Execució de Proves
-??? tip "Tecnologies Utilitzades"
-    - Selenium per a proves funcionals
-    - Maven com a gestor de dependències
-    - Extent per a informes executives
-
+### 1. Pipeline
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
 flowchart TD
@@ -103,6 +78,14 @@ class N error
 
 ```
 
+### 2. Execució de Proves
+??? tip "Tecnologies Utilitzades"
+    - Selenium per a proves funcionals
+    - Maven com a gestor de dependències
+    - Extent per a informes executives
+
+
+
 ### 3. Gestió de Resultats
 
 | Eina | Funció | Integració |
@@ -110,6 +93,53 @@ class N error
 | JIRA | Pujada de resultats | Xray Test Management |
 | GitHub | Vinculació a PRs | Comentaris automàtics |
 | InfluxDB | Emmagatzematge mètriques | Grafana Dashboards |
+
+
+### 4. Gestió de d'Errors
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+stateDiagram-v2
+    [*] --> Error
+    Error --> Notificació
+    Notificació --> JIRA: Crea incidència
+    Notificació --> Teams: Notifica equip
+    JIRA --> [*]
+    Teams --> [*]
+```
+### 6.  Flux de Qualitat (Quality Gate)
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart LR
+    A[Resultats Proves] --> B{QUALITY_GATE?}
+    B -->|Activat| C[Verifica UMBRAL]
+    C --> D>20% errors permessos]
+    B -->|Desactivat| E[Ignora errors]
+    D --> F{Èxit?}
+    F -->|Sí| G[Continua]
+    F -->|No| H[Atura Pipeline]
+
+```
+### 5. Diagrama de Configuració del Entorn
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart LR
+    subgraph Kubernetes
+        A[Pod Template] --> B[Contenidor Maven]
+        B --> C[Persistent Volume]
+        C --> D[.m2/repository]
+    end
+    subgraph Config
+        E[Paràmetres] --> F[REPO_URL]
+        E --> G[ENV_TO_TEST]
+        E --> H[BRANCH]
+    end
+    Kubernetes --> Config
+
+```
+
 
 ## Qualitat i Seguretat
 
