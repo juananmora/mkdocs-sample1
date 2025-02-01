@@ -1,6 +1,6 @@
 # MAT - Continuous Deployment i Testing
 
-![MAT Logo](../images/mat_logo.png){ align=right width="200" }
+![MAT Logo](../assests/senyal.jpg){ align=right width="200" }
 
 ## Continuous Deployment Preproducció - Microserveis
 
