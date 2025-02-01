@@ -1,125 +1,109 @@
-#+AUTHOR: DevSecOps CTTI
-#+TITLE: MAT Functional Tests :: ~template~
+# Automatització de Proves amb Selenium { .md-typeset }
 
-* Table of Contents :toc:
-- [[#requirements][Requirements]]
-- [[#usage][Usage]]
-  - [[#selenium-grid-installation][Selenium Grid installation]]
-  - [[#first-execution][First execution]]
-  - [[#creating-a-test][Creating a test]]
+<div class="hero" markdown>
 
-* Requirements
+## :simple-selenium: Eina Clau per a Qualitat Web
 
-- OpenJDK >= 11
-- Maven > 3
+El MAT integra Selenium com a peça fonamental per garantir el funcionament correcte de les aplicacions web mitjançant proves funcionals automatitzades.
 
-* Input parameters
+[Veure Pipeline :material-arrow-right-circle:](../mat/pipeline.md){ .md-button }
+[Documentació Tècnica](https://www.selenium.dev){ .md-button .md-button--primary }
 
-La llibreria que utilitzem, ~mat-selenium~, accepta i necessita un conjunt de parametres. Aquests son els obligatoris:
+</div>
 
-- ~app~ :: Nom de l'aplicació a ser provada. Acceptat via env. var. (i.e. ~MAT_TF_APP=...~), propietat de la JVM (i.e. ~-Dapp=...~), o arxiu de config. (i.e. ~app = ...~).
-- ~app_url~ :: URL de l'aplicació a ser provada. Acceptat via env. var. (i.e. ~MAT_TF_APP_URL=...~), propietat de la JVM (i.e. ~-Dapp_url=...~), o arxiu de config. (i.e. ~app_url = ...~).
-- ~maintainer~ :: ID del lot de manteniment a carreg del projecte. Acceptat via env. var. (i.e. ~MAT_TF_MAINTAINER=...~), propietat de la JVM (i.e. ~-Dmaintainer=...~), o arxiu de config. (i.e. ~maintainer = ...~).
-- ~selenium_url~ :: URL del endpoint del webdriver del HUB de Selenium Grid. Acceptat via env. var. (i.e. ~MAT_TF_SELENIUM_URL=...~), propietat de la JVM (i.e. ~-Dselenium_url=...~), o arxiu de config. (i.e. ~selenium_url = ...~).
+<div class="grid cards" markdown>
 
-A més, per disposar de funcionalitat extra i/o personalitzar el comportament de l'execució, tenim aquests parametres extres:
+-   :material-web-check:{ .lg .middle } __Multiplataforma__
+    
+    ---
+    
+    Compatibilitat amb Chrome, Firefox, Edge i Safari
+    
+-   :material-robot:{ .lg .middle } __Patró Page Object__
+    
+    ---
+    
+    Estructura modular i reutilitzable per a manteniment fàcil
+    
+-   :material-chart-timeline-variant:{ .lg .middle } __Integració CI/CD__
+    
+    ---
+    
+    Execució automàtica mitjançant Jenkins i Extent Reports
 
-- ~headless~ :: Controla si els navegadors s'inicien. ~true~ per defecte. Només s'accepta via una propietat de la JVM (i.e. ~-Dheadless=[true|false]~).
-- ~selenium_firefox_driver~ :: /Path/ al binari del webdriver de Firefox (/Gecko/). Acceptat via env. var. (i.e. ~MAT_TF_SELENIUM_FIREFOX_DRIVER=...~) o propietat de la JVM (i.e. ~-Dselenium_firefox_driver=...~).
-- ~influxdb_url~ :: ...
-- ~influxdb_token~ :: ...
-- ~influxdb_bucket~ :: ...
-- ~influxdb_company~ :: ...
-- ~environment~ :: ...
-- ~build_id~ :: ...
-- ~job_name~ :: ...
-- ~jira_pk~ :: ID del projecte de Jira associat al projecte de testing a executar.
-- ~jira_issue~ :: ID de la issue de Jira (Test Plan) la qual representa el projecte de testing, on s'asociaran els casos de prova implementats.
+</div>
 
-* Usage
+## Flux de Treball al MAT { #workflow }
 
-Aquesta es la plantilla oficial del MAT per utilitzar i interactuar amb la llibreria ~mat-selenium~.
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart TD
+A([Inici Pipeline]) --> B[Jenkins inicia execució]
+B --> C[Configura entorn Kubernetes]
+C --> D[Executa suite de proves]
+D --> E{{Resultats}}
+E -->|Èxit| F[Desplegament a Preproducció]
+E -->|Error| G[Notificació a Slack]
+F --> H([Fi Procés])
+G --> H
+```
 
-** Selenium Grid installation
+### :material-cog: Configuració
 
-Donat el cas que ja tinguem el /Selenium Grid/ desplegat i disponible a la nostra xarxa (al nostre propi PC o a un altre equip de la xarxa local), ja podem executar la plantilla i, posteriorment, fer-la nostra i ajustar-la a les necessitats de la nostra aplicació.
+??? success "Requisits Previs"
+    1. Instal·lar WebDrivers específics
+    2. Configurar nodes Selenium Grid
+    3. Integrar amb repositori Git del projecte
 
-En cas contrari, en aquest repositori posem a lliure disposició l'arxiu ~docker-compose.yaml~, el qual desplegarà els 3 navegadors i el /hub/, cadascun al seu propi contenidor mitjançant /Docker/ i /Docker Compose/. Aquesta es la comanda per tal de dur-ho a terme:
+```
+class LoginPage:
+def init(self, driver):
+self.driver = driver
+self.username = (By.ID, "username")
+self.password = (By.ID, "password")
+def login(self, user, passw):
+    self.driver.find_element(*self.username).send_keys(user)
+    self.driver.find_element(*self.password).send_keys(passw)
+    self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
+```
 
-#+begin_src sh
-docker-compose up -d
-#+end_src
+### :material-test-tube: Execució de Proves
 
-** First execution
+<div class="grid" markdown>
 
-Una vegada tot està preparat, i assumint que el /Selenium Grid/ està desplegat i disponible en ~http://localhost:4444~, podem executar la plantilla amb el test d'exemple amb la següent comanda:
+!!! tip "Millors Pràctiques"
+    - Ús de waits explicites
+    - Proves independents i aïllades
+    - Captura d'evidències en fallades
 
-#+begin_src sh
-mvn clean test -Dselenium_url="http://localhost:4444/wd/hub"
-#+end_src
+![Selenium Grid](images/selenium-grid.png){ align=right width="400" }
 
-En acabar l'execució, podem consultar el /report/ HTML generat en ~target/report/index.html~.
+</div>
 
-** Creating a test
+#### Flux d'Execució
+1. **Inicialització**  
+   :material-docker: Configuració de contenidors Kubernetes
+2. **Execució**  
+   :material-play: Tests en paral·lel amb Grid
+3. **Validació**  
+   :material-check-all: Assertions múltiples per cas
+4. **Report**  
+   :material-file-chart: Generació d'informes Extent
 
-(...)
+### :material-chart-box: Mètriques Clau
 
-#+begin_src java
-// src/test/java/Pages/GooglePage.java
+| Indicador | Descripció | Objectiu |
+|-----------|------------|---------|
+| :material-speedometer: Temps Execució | Durada total de les proves | < 15 min |
+| :material-bug: Taxes d'Error | Proves fallides/totals | 0% |
+| :material-coverage: Cobertura | % funcionalitats provades | > 90% |
 
-package cat.gencat.mat.pages;
+<div class="grid cards" markdown>
 
-public final class GooglePage {
-  //  ... attributes here ...
+-   [Veure Exemples Complets](../examples/selenium){ .md-button .md-button--primary }
+-   [Configurar Jenkins](../guides/jenkins-setup.md){ .md-button }
 
-  public static void search(String s) {
-    // ... implementation here ...
-  }
-}
-#+end_src
-
-(...)
-
-#+begin_src java
-// src/test/java/GoogleTest.java
-
-import cat.gencat.mat.Utils;
-import cat.gencat.mat.BaseTest;
-import java.lang.reflect.Method;
-import org.testng.annotations.Test;
-import cat.gencat.mat.pages.GooglePage;
-import org.testng.annotations.Parameters;
-import app.getxray.xray.testng.annotations.XrayTest;
-import app.getxray.xray.testng.annotations.Requirement;
-
-public final class GoogleTest extends BaseTest {
-  @Test @Parameters(value = {"browser"})
-  @XrayTest(key = "...")     // Jira's `Test` key
-  @Requirement(key = "...")  // Jira's `Story` key
-  public void googleTest(String browser, Method method) throws Throwable {
-    try {
-      Utils.step("Enter website");
-      Utils.gotoApp();
-      Utils.maximize();
-      Utils.anotate(Utils.LogLevel.PASS, "Website's homepage is accessible");
-      Utils.screenshot("Homepage");
-
-      // ... code continues ...
-
-      Utils.step("Send search request");
-      GooglePage.search("This is a search request");
-      Utils.anotate(Utils.LogLevel.PASS, "Google search made successfully");
-      Utils.screenshot("Google search results");
-
-      // ... code continues ...
-
-      Utils.endTestAsOK(browser, method);
-    }
-    catch (Exception | AssertionError e) { Utils.endTestAsKO(browser, method, e); }
-  }
-}
-#+end_src
-
+</div>
 
 
 

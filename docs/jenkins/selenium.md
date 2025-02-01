@@ -1,107 +1,128 @@
-# Automatització de Proves amb Selenium { .md-typeset }
+# Pipeline d'Integració Contínua MAT { .md-typeset }
 
-<div class="hero" markdown>
+![Jenkins Pipeline](images/jenkins-pipeline.png){ align=right width="300" }
 
-## :simple-selenium: Eina Clau per a Qualitat Web
-
-El MAT integra Selenium com a peça fonamental per garantir el funcionament correcte de les aplicacions web mitjançant proves funcionals automatitzades.
-
-[Veure Pipeline :material-arrow-right-circle:](../mat/pipeline.md){ .md-button }
-[Documentació Tècnica](https://www.selenium.dev){ .md-button .md-button--primary }
-
-</div>
+## Descripció General
+Aquest pipeline Jenkins automatitza l'execució de proves funcionals integrat al Marc d'Automatització de Testing (MAT) del CTTI.
 
 <div class="grid cards" markdown>
 
--   :material-web-check:{ .lg .middle } __Multiplataforma__
-    
-    ---
-    
-    Compatibilitat amb Chrome, Firefox, Edge i Safari
-    
--   :material-robot:{ .lg .middle } __Patró Page Object__
-    
-    ---
-    
-    Estructura modular i reutilitzable per a manteniment fàcil
-    
--   :material-chart-timeline-variant:{ .lg .middle } __Integració CI/CD__
-    
-    ---
-    
-    Execució automàtica mitjançant Jenkins i Extent Reports
+-   :material-git: __Integració amb GitHub__
+-   :material-jira: __Sincronització amb JIRA__
+-   :material-chart-line: __Mètriques en temps real__
+-   :material-shield-check: __Quality Gates Integrats__
 
 </div>
 
-## Flux de Treball al MAT { #workflow }
+## Diagrama del Flux
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
 flowchart TD
-A([Inici Pipeline]) --> B[Jenkins inicia execució]
-B --> C[Configura entorn Kubernetes]
-C --> D[Executa suite de proves]
-D --> E{{Resultats}}
-E -->|Èxit| F[Desplegament a Preproducció]
-E -->|Error| G[Notificació a Slack]
-F --> H([Fi Procés])
-G --> H
+A([Inici]) --> B[Validació de Paràmetres]
+B --> C[Checkout Codi]
+C --> D[Execució de Proves]
+D --> E[Pujada de Resultats a JIRA]
+E --> F[Publicació d'Informes]
+F --> G{Avaluació Quality Gate}
+G -->|Èxit| H[Notificació d'Èxit]
+G -->|Error| I[Notificació d'Error]
+H --> Z([Fi])
+I --> Z
 ```
 
-### :material-cog: Configuració
+## Paràmetres del Pipeline
 
-??? success "Requisits Previs"
-    1. Instal·lar WebDrivers específics
-    2. Configurar nodes Selenium Grid
-    3. Integrar amb repositori Git del projecte
+| Paràmetre | Descripció | Valors Permesos |
+|-----------|------------|-----------------|
+| `REPO_URL` | Repositori de proves | URL GitHub vàlida |
+| `ENV_TO_TEST` | Entorn de proves | Desenvolupament, Integració, Preproducció, Producció |
+| `BRANCH` | Branca a provar | Nom de branca vàlid |
+| `QUALITY_GATE` | Control de qualitat | true/false |
+
+## Etapes Principals
+
+### 1. Configuració Inicial
+```mermaid
+sequenceDiagram
+participant J as Jenkins
+participant G com a GitHub
+participant K com a Kubernetes
+J->>G: Clona repositori
+G-->>J: Codi font
+J->>K: Desplega Pod Maven
+K-->>J: Confirmació
+```
+
+### 2. Execució de Proves
+??? tip "Tecnologies Utilitzades"
+    - Selenium per a proves funcionals
+    - Maven com a gestor de dependències
+    - Allure per a informes executives
 
 ```
-class LoginPage:
-def init(self, driver):
-self.driver = driver
-self.username = (By.ID, "username")
-self.password = (By.ID, "password")
-def login(self, user, passw):
-    self.driver.find_element(*self.username).send_keys(user)
-    self.driver.find_element(*self.password).send_keys(passw)
-    self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
+container('maven') {
+sh '''
+mvn clean test
+-Dbuild_id=${BUILD_NUMBER}
+-Denvironment=${params.ENV_TO_TEST}
+'''
+}
 ```
 
-### :material-test-tube: Execució de Proves
+### 3. Gestió de Resultats
 
-<div class="grid" markdown>
+| Eina | Funció | Integració |
+|------|--------|------------|
+| JIRA | Pujada de resultats | Xray Test Management |
+| GitHub | Vinculació a PRs | Comentaris automàtics |
+| InfluxDB | Emmagatzematge mètriques | Grafana Dashboards |
 
-!!! tip "Millors Pràctiques"
-    - Ús de waits explicites
-    - Proves independents i aïllades
-    - Captura d'evidències en fallades
+## Qualitat i Seguretat
 
-![Selenium Grid](images/selenium-grid.png){ align=right width="400" }
+!!! danger "Control d'Errors"
+    El pipeline inclou mecanismes avançats de gestió d'errors:
+    - Validació de tickets JIRA
+    - Avaluació de llindars d'error
+    - Notificacions multi-canal
 
-</div>
+```mermaid
+stateDiagram-v2
+[] --> Error
+Error --> Notificació: Envia alerta
+Notificació --> JIRA: Crea incidència
+Notificació --> Slack: Notifica equip
+JIRA --> []
+Slack --> [*]
+```
 
-#### Flux d'Execució
-1. **Inicialització**  
-   :material-docker: Configuració de contenidors Kubernetes
-2. **Execució**  
-   :material-play: Tests en paral·lel amb Grid
-3. **Validació**  
-   :material-check-all: Assertions múltiples per cas
-4. **Report**  
-   :material-file-chart: Generació d'informes Extent
+## Mètriques Clau
 
-### :material-chart-box: Mètriques Clau
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"description": "Mètriques d'Execució",
+"data": {
+"values": [
+{"metric": "Temps Execució", "value": 15, "unit": "min"},
+{"metric": "Proves Exitoses", "value": 95, "unit": "%"},
+{"metric": "Coverage", "value": 85, "unit": "%"}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {"field": "metric", "type": "nominal", "axis": {"labelAngle": 0}},
+"y": {"field": "value", "type": "quantitative"},
+"color": {"field": "metric", "legend": null}
+}
+}
 
-| Indicador | Descripció | Objectiu |
-|-----------|------------|---------|
-| :material-speedometer: Temps Execució | Durada total de les proves | < 15 min |
-| :material-bug: Taxes d'Error | Proves fallides/totals | 0% |
-| :material-coverage: Cobertura | % funcionalitats provades | > 90% |
+
+## Integració amb Ecosistema MAT
 
 <div class="grid cards" markdown>
 
--   [Veure Exemples Complets](../examples/selenium){ .md-button .md-button--primary }
--   [Configurar Jenkins](../guides/jenkins-setup.md){ .md-button }
+-   [Documentació Tècnica](https://ctti.gencat.cat/mat-docs){ .md-button }
+-   [Exemples d'Implementació](../examples){ .md-button }
+-   [Guia de Troubleshooting](../troubleshooting){ .md-button }
 
 </div>
-
