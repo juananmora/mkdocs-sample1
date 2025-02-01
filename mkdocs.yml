@@ -132,6 +132,7 @@ plugins:
   - search
   # third party plugins
   - mkdocstrings
+  - glightbox # Per funcionalitat de zoom d'imatges
 
 theme:
   logo: assets/idbh.png
@@ -631,6 +632,12 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.emoji
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - attr_list
+  - md_in_html
   #- pymdownx.arithmex:
   #- pymdownx.b64:
   #- pymdownx.betterem:
