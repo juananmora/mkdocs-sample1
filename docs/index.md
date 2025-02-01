@@ -6,9 +6,6 @@ hide:
 
 # MAT - Marc d'Automatització de Testing { .md-typeset .md-typeset--home }
 
-## Header
-![Generalitat de Catalunya Logo](./images/gencat.png)
-
 <div class="grid cards" markdown>
 
 -   :material-test-tube:{ .lg .middle } __Eines avançades__
