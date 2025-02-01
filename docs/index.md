@@ -17,7 +17,7 @@
 [LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
 
 ## Header
-![Generalitat de Catalunya Logo](images/gencat.png)
+![Generalitat de Catalunya Logo](./images/gencat.png)
 
 # MkDocs Material Template - Jonast.Gabler/mkdocs-material
 This is a template repository for anyone that wants to use the MkDocs Material Theme.

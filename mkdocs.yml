@@ -97,7 +97,10 @@ nav:
 - Mermaid: test.md
 - About: about.md
 - Type of Tests:
-  -   Pipeline: mat/pipeline.md
+  -   Continuous Testing: 
+      - Pipeline Microserveis PRE: mat/pipeline.md
+      - Pipeline Legacy PRE: mat/pipeline.md
+      - Pipeline PRO: mat/pipeline.md
   -   Test Funcionales:
       - Selenium: tests/selenium.md
       - Playwright: test.md
