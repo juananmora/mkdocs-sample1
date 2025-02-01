@@ -1,49 +1,110 @@
-# Automatización de Pruebas con Selenium
+# Automatització de Proves amb Selenium { .md-typeset }
 
-<div class="grid cards" markdown>
+<div class="hero" markdown>
 
-- :material-web: Compatibilidad multi-navegador
-- :material-robot: Framework de testing web
-- :material-chart-line: Integración CI/CD
+## :simple-selenium: Eina Clau per a Qualitat Web
+
+El MAT integra Selenium com a peça fonamental per garantir el funcionament correcte de les aplicacions web mitjançant proves funcionals automatitzades.
+
+[Veure Pipeline :material-arrow-right-circle:](../mat/pipeline.md){ .md-button }
+[Documentació Tècnica](https://www.selenium.dev){ .md-button .md-button--primary }
 
 </div>
 
-## Flujo de Trabajo en MAT
+<div class="grid cards" markdown>
+
+-   :material-web-check:{ .lg .middle } __Multiplataforma__
+    
+    ---
+    
+    Compatibilitat amb Chrome, Firefox, Edge i Safari
+    
+-   :material-robot:{ .lg .middle } __Patró Page Object__
+    
+    ---
+    
+    Estructura modular i reutilitzable per a manteniment fàcil
+    
+-   :material-chart-timeline-variant:{ .lg .middle } __Integració CI/CD__
+    
+    ---
+    
+    Execució automàtica mitjançant Jenkins i Allure Reports
+
+</div>
+
+## Flux de Treball al MAT { #workflow }
+
+%%{init: {'theme':'neutral'}}%%
 
 ```mermaid
-graph TD
-A[Jenkins inicia ejecución] --> B[Clona repositorio]
-B --> C[Configura entorno de pruebas]
-C --> D[Ejecuta tests Selenium]
-D --> E{¿Pruebas exitosas?}
-E -->|Sí| F[Genera reporte Allure]
-E -->|No| G[Notifica fallos]
-F --> H[Despliega a preproducción]
-
+flowchart TD
+A([Inici Pipeline]) --> B[Jenkins inicia execució]
+B --> C[Configura entorn Docker]
+C --> D[Executa suite de proves]
+D --> E{{Resultats}}
+E -->|Èxit| F[Desplegament a Preproducció]
+E -->|Error| G[Notificació a Slack]
+F --> H([Fi Procés])
+G --> H
 ```
 
-### Implementación
-1. **Configuración de Entorno**:
-   - Instalar drivers específicos para cada navegador
-   - Configurar Jenkins para ejecución paralela
+### :material-cog: Configuració
 
-2. **Desarrollo de Pruebas**:
-   - Crear scripts usando Page Object Model
-   - Implementar validaciones de UI/UX
+??? success "Requisits Previs"
+    1. Instal·lar WebDrivers específics
+    2. Configurar nodes Selenium Grid
+    3. Integrar amb repositori Git del projecte
 
-3. **Integración Continua**:
-   - Programar ejecución nocturna en Jenkins
-   - Configurar triggers ante cambios en repositorio
+```java
 
-4. **Reportes**:
-   - Generar dashboards interactivos con Allure
-   - Integrar métricas de cobertura de pruebas
+class LoginPage:
+def init(self, driver):
+self.driver = driver
+self.username = (By.ID, "username")
+self.password = (By.ID, "password")
+def login(self, user, passw):
+    self.driver.find_element(*self.username).send_keys(user)
+    self.driver.find_element(*self.password).send_keys(passw)
+    self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
 
----
+''' 
 
-![Selenium Grid](images/selenium-grid.png){ align=right width=300 }
+### :material-test-tube: Execució de Proves
 
-### Ventajas Clave
-- Pruebas cross-browser automatizadas
-- Detección temprana de regresiones visuales
-- Soporte para múltiples lenguajes (Java, Python, C#)
+<div class="grid" markdown>
+
+!!! tip "Millors Pràctiques"
+    - Ús de waits explicites
+    - Proves independents i aïllades
+    - Captura d'evidències en fallades
+
+![Selenium Grid](images/selenium-grid.png){ align=right width="400" }
+
+</div>
+
+#### Flux d'Execució
+1. **Inicialització**  
+   :material-docker: Configuració de contenidors Docker
+2. **Execució**  
+   :material-play: Tests en paral·lel amb Grid
+3. **Validació**  
+   :material-check-all: Assertions múltiples per cas
+4. **Report**  
+   :material-file-chart: Generació d'informes Allure
+
+### :material-chart-box: Mètriques Clau
+
+| Indicador | Descripció | Objectiu |
+|-----------|------------|---------|
+| :material-speedometer: Temps Execució | Durada total de les proves | < 15 min |
+| :material-bug: Taxes d'Error | Proves fallides/totals | 0% |
+| :material-coverage: Cobertura | % funcionalitats provades | > 90% |
+
+<div class="grid cards" markdown>
+
+-   [Veure Exemples Complets](../examples/selenium){ .md-button .md-button--primary }
+-   [Configurar Jenkins](../guides/jenkins-setup.md){ .md-button }
+
+</div>
+

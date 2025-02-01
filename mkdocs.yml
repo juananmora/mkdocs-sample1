@@ -624,6 +624,13 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji
   #- pymdownx.arithmex:
   #- pymdownx.b64:
   #- pymdownx.betterem:
