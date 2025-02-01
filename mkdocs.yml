@@ -94,7 +94,7 @@ repo_url: https://github.com/juananmora/mkdocs-sample1
 # +--------------------------------------------------------------------------------------------------------+
 nav:
 - Welcome: mat/index.md
-- Mermaid: test.md
+- Mermaid: index2.md
 - About: about.md
 - Type of Tests:
   -   Continuous Testing: 
