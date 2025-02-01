@@ -35,9 +35,8 @@ El MAT integra Selenium com a peça fonamental per garantir el funcionament corr
 
 ## Flux de Treball al MAT { #workflow }
 
-%%{init: {'theme':'neutral'}}%%
-
 ```mermaid
+%%{init: {'theme':'neutral'}}%%
 flowchart TD
 A([Inici Pipeline]) --> B[Jenkins inicia execució]
 B --> C[Configura entorn Docker]
@@ -56,8 +55,7 @@ G --> H
     2. Configurar nodes Selenium Grid
     3. Integrar amb repositori Git del projecte
 
-```java
-
+```
 class LoginPage:
 def init(self, driver):
 self.driver = driver
@@ -67,8 +65,7 @@ def login(self, user, passw):
     self.driver.find_element(*self.username).send_keys(user)
     self.driver.find_element(*self.password).send_keys(passw)
     self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
-
-''' 
+```
 
 ### :material-test-tube: Execució de Proves
 
