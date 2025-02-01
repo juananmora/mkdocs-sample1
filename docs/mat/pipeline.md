@@ -1,15 +1,16 @@
-# MAT - Continuous Deployment i Testing Preproducció - Microserveis { .md-typeset }
-![Jenkins Pipeline](../images/jenkins-pipeline.png){ align=right width="300" }
+# Continuous Deployment i Testing Preproducció - Microserveis { .md-typeset }
+![Jenkins Pipeline](../images/jenkins-pipeline.png){ align=right width="150" }
+
+## Fases del Procés
+
+!!! note "Procés Automatitzat"
+    El procés de Continuous Deployment està completament automatitzat, assegurant una entrega ràpida i consistent.
 
 <figure markdown>
   ![Diagrama de Continuous Deployment](../images/pipeline.png){ loading=lazy }
   <figcaption>Diagrama del procés de Continuous Deployment</figcaption>
 </figure>
 
-## Fases del Procés
-
-!!! note "Procés Automatitzat"
-    El procés de Continuous Deployment està completament automatitzat, assegurant una entrega ràpida i consistent.
 
 ### 1. Inici del Desplegament (CD) :rocket:
 
