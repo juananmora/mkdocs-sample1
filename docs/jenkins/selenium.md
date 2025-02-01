@@ -1,6 +1,6 @@
 # Pipeline d'Integració Contínua MAT { .md-typeset }
 
-![Jenkins Pipeline](images/jenkins-pipeline.png){ align=right width="300" }
+![Jenkins Pipeline](../images/jenkins-pipeline.png){ align=right width="300" }
 
 ## Descripció General
 Aquest pipeline Jenkins automatitza l'execució de proves funcionals integrat al Marc d'Automatització de Testing (MAT) del CTTI.
