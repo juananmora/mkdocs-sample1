@@ -107,7 +107,7 @@ stateDiagram-v2
     JIRA --> [*]
     Teams --> [*]
 ```
-### 6.  Flux de Qualitat (Quality Gate)
+### 5.  Flux de Qualitat (Quality Gate)
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
@@ -121,7 +121,7 @@ flowchart LR
     F -->|No| H[Atura Pipeline]
 
 ```
-### 5. Diagrama de Configuració del Entorn
+### 6. Diagrama de Configuració del Entorn
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
