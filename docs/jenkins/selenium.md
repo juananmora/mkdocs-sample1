@@ -29,7 +29,7 @@ El MAT integra Selenium com a peça fonamental per garantir el funcionament corr
     
     ---
     
-    Execució automàtica mitjançant Jenkins i Allure Reports
+    Execució automàtica mitjançant Jenkins i Extent Reports
 
 </div>
 
@@ -39,7 +39,7 @@ El MAT integra Selenium com a peça fonamental per garantir el funcionament corr
 %%{init: {'theme':'neutral'}}%%
 flowchart TD
 A([Inici Pipeline]) --> B[Jenkins inicia execució]
-B --> C[Configura entorn Docker]
+B --> C[Configura entorn Kubernetes]
 C --> D[Executa suite de proves]
 D --> E{{Resultats}}
 E -->|Èxit| F[Desplegament a Preproducció]
@@ -82,13 +82,13 @@ def login(self, user, passw):
 
 #### Flux d'Execució
 1. **Inicialització**  
-   :material-docker: Configuració de contenidors Docker
+   :material-docker: Configuració de contenidors Kubernetes
 2. **Execució**  
    :material-play: Tests en paral·lel amb Grid
 3. **Validació**  
    :material-check-all: Assertions múltiples per cas
 4. **Report**  
-   :material-file-chart: Generació d'informes Allure
+   :material-file-chart: Generació d'informes Extent
 
 ### :material-chart-box: Mètriques Clau
 
