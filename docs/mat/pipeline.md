@@ -104,43 +104,6 @@ Els següents paràmetres s’utilitzen per configurar l'execució de la pipelin
 | `API_JIRA_ISSUE_KEY`      | `DEVSECOPS2-251`                                                           | Clau de la incidència Jira (Test Plan) per a les proves d'API                              |
 
 ---
-## Diagrama de Flux dels Paràmetres
-
-```mermaid
-%%{init: {'theme':'neutral'}}%%
-flowchart TD
-A[Paràmetres d'Entrada Pipeline] --> B[Funcional]
-A --> C[Rendiment]
-A --> D[API]
-B --> B1[FUNC_REPO_URL]
-B --> B2[FUNC_BRANCH]
-B --> B3[FUNC_ENV_TO_TEST]
-B --> B4[FUNC_URL_APP]
-B --> B5[FUNC_UMBRAL]
-B --> B6[FUNC_QUALITY_GATE]
-B --> B7[FUNC_JIRA_PROJECT_KEY]
-B --> B8[FUNC_JIRA_ISSUE_KEY]
-
-C --> C1[PERF_REPO_URL]
-C --> C2[PERF_BRANCH]
-C --> C3[PERF_PROTOCOL]
-C --> C4[PERF_URL_APP]
-C --> C5[PERF_ENV_TO_TEST]
-C --> C6[PERF_TEST_DURATION]
-C --> C7[PERF_RAMP_UP_TIME]
-C --> C8[PERF_THREAD_COUNT]
-C --> C9[PERF_QUALITY_GATE]
-C --> C10[PERF_UMBRAL]
-C --> C11[PERF_JIRA_PROJECT_KEY]
-C --> C12[PERF_JIRA_ISSUE_KEY]
-
-D --> D1[API_REPO_URL]
-D --> D2[API_BRANCH]
-D --> D3[API_APP_NAME]
-D --> D4[API_ENV_TO_TEST]
-D --> D5[API_JIRA_PROJECT_KEY]
-D --> D6[API_JIRA_ISSUE_KEY]
-```
 
 !!! tip "Millora Contínua"
     El procés de CD està en constant evolució. Si tens suggeriments de millora, no dubtis en compartir-los!
