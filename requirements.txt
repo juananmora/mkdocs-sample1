@@ -16,6 +16,7 @@ regex>=2022.4
 requests~=2.31
 mkdocstrings==0.25.0
 mkdocstrings-python==1.10.0
+mkdocs-glightbox==0.4.0
 
 
 
