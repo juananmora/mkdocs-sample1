@@ -1,73 +1,97 @@
----
-hide:
-  - navigation
-  - toc
----
-
-# MAT - Marc d'Automatització de Testing { .md-typeset .md-typeset--home }
+# MAT - Marc d'Automatització de Testing
 
 <div class="grid cards" markdown>
 
--   :material-test-tube:{ .lg .middle } __Eines avançades__
+-   :material-test-tube:{ .lg .middle } __Plataforma Integral__
 
     ---
 
-    Seleccionades acuradament per optimitzar cada fase del procés de proves.
+    Optimitzem, estandarditzem i agilitzem el procés de proves de programari.
 
--   :material-cog-refresh:{ .lg .middle } __Processos eficients__
-
-    ---
-
-    Dissenyats per agilitzar el cicle de desenvolupament i garantir la qualitat del producte final.
-
--   :material-star-check:{ .lg .middle } __Millors pràctiques__
+-   :material-cog-sync:{ .lg .middle } __Metodologia Avançada__
 
     ---
 
-    Basades en estàndards internacionals i adaptades a les necessitats específiques de la Generalitat.
+    Implementem bones pràctiques i processos automatitzats de testing.
+
+-   :material-rocket-launch:{ .lg .middle } __Transformació Digital__
+
+    ---
+
+    Impulsem la millora contínua en el lliurament de solucions tecnològiques.
 
 </div>
 
-<div class="hero" markdown>
+## Descripció del MAT
 
-## Benvinguts/des al MAT
+!!! note "Definició Estratègica"
+    El MARC D'AUTOMATITZACIÓ DE TESTING (MAT) ha estat desenvolupat per l'Àrea de Qualitat del CTTI com una plataforma integral dissenyada per optimitzar, estandarditzar i agilitzar el procés de proves de programari.
 
-El **Marc d'Automatització de Testing (MAT)** és una iniciativa innovadora desenvolupada pel Centre de Telecomunicacions i Tecnologies de la Informació (CTTI) de la Generalitat de Catalunya. Aquest marc representa un salt qualitatiu en la manera com abordem les proves de programari en els nostres projectes tecnològics.
+### Característiques Principals
 
-[Descobreix el MAT :octicons-arrow-right-24:](../about.md){ .md-button .md-button--primary }
-[Continuous Deployment Pipeline](../mat/pipeline.md){ .md-button }
+??? success "Enfocament Estructurat"
+    El MAT no és només un conjunt d'eines, sinó un enfocament estructurat que inclou:
 
-</div>
+    - Metodologies avançades
+    - Bones pràctiques de testing
+    - Processos automatitzats
+    - Reducció de riscos
+    - Minimització del temps de validació
+
+### Arquitectura Modular
 
 <div class="grid cards" markdown>
 
--   :material-trending-up:{ .lg .middle } __Millora de qualitat__
+-   :material-puzzle:{ .lg .middle } __Modularitat__
 
     ---
 
-    Millorar significativament la qualitat del programari desenvolupat per i per a la Generalitat.
+    Estructura escalable i adaptable a diversos projectes
 
--   :material-cash-multiple:{ .lg .middle } __Reducció de costos__
-
-    ---
-
-    Reduir els costos associats al desenvolupament i manteniment de sistemes.
-
--   :material-rocket-launch:{ .lg .middle } __Acceleració de lliuraments__
+-   :material-tools:{ .lg .middle } __Eines Avançades__
 
     ---
 
-    Accelerar el procés de lliurament de productes, assegurant alhora la seva fiabilitat i rendiment.
+    Execució, seguiment i anàlisi de proves automatitzades
 
--   :material-lightbulb-on:{ .lg .middle } __Cultura d'innovació__
+-   :material-graph:{ .lg .middle } __Integració CI/CD__
 
     ---
 
-    Fomentar una cultura d'excel·lència i innovació contínua en el nostre ecosistema tecnològic.
+    Guies i processos per a fluxos de treball moderns
 
 </div>
 
-!!! quote "Construint el futur digital de Catalunya"
-    Us convidem a explorar les diferents eines i recursos que el MAT posa a la vostra disposició. Junts, estem construint el futur digital de Catalunya.
+### Continuous Testing (CT)
+
+!!! tip "Execució Contínua"
+    El CT és una pràctica fonamental que consisteix en:
+
+    - Proves automatitzades durant tot el cicle de vida
+    - Validació immediata de cada canvi de codi
+    - Detecció primerenca d'errors
+
+### Beneficis Estratègics
+
+??? quote "Impacte del MAT"
+    - :material-chart-line: Millora de l'eficiència
+    - :material-clock-fast: Reducció del temps de lliurament
+    - :material-shield-check: Manteniment d'alt nivell de qualitat
+    - :material-bug: Detecció ràpida de regressions
+    - :material-cash-multiple: Reducció de costos de correcció
+
+### Integració amb Eines CTTI
+
+| Eina | Funció | Descripció |
+|------|--------|------------|
+| :simple-sonarqube: Sonarqube | Anàlisi Estàtic | Avaluació de qualitat de codi |
+| :material-test-tube: HP UFT | Proves Funcionals | Automatització de test funcionals |
+| :material-graph: ALM Octane | Gestió de Proves | Seguiment i gestió de casos de test |
+
+!!! success "Transformació Digital"
+    El MAT impulsa la millora contínua, facilitant el lliurament de solucions tecnològiques robustes i fiables.
+
+[Explora el Continuous Deployment :material-arrow-right:](../mat/pipeline.md){ .md-button .md-button--primary }
+
 
 
