@@ -3,11 +3,12 @@ hide:
   - navigation
   - toc
 ---
+# Benvinguts/des al MAT { .md-typeset }
+
+
+![MAT Logo](./images/gencat.png){ .mat-logo }
 
 <div class="hero" markdown>
-![MAT Logo](./images/gencat.png){ align=center width="45000" }
-
-## Benvinguts/des al MAT
 
 El **Marc d'Automatització de Testing (MAT)** és una iniciativa innovadora desenvolupada pel *Centre de Telecomunicacions i Tecnologies de la Informació (CTTI)* de la Generalitat de Catalunya. Aquest marc representa un **salt qualitatiu** en la manera com abordem les proves de programari en els nostres projectes tecnològics.
 
@@ -24,7 +25,7 @@ Amb el **MAT**, aspirem a:
 - **Accelerar el procés de lliurament** de productes, assegurant alhora la seva fiabilitat i rendiment.
 - **Fomentar una cultura d'excel·lència** i innovació contínua en el nostre ecosistema tecnològic.
 
-Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la vostra disposició. Junts, estem construint el **futur digital de Catalunya**.
+!!! quote "Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la vostra disposició. Junts, estem construint el **futur digital de Catalunya**."
 
 
 <div class="grid cards" markdown>
@@ -48,14 +49,9 @@ Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la v
     Basades en estàndards internacionals i adaptades a les necessitats específiques de la Generalitat.
 
 </div>
-
-<div class="hero" markdown>
-
-
-[Descobreix el MAT :octicons-arrow-right-24:](index2.md){ .md-button .md-button--primary }
-[Continuous Deployment Pipeline](../mat/pipeline.md){ .md-button }
-
 </div>
+
+## BENEFICIOS
 
 <div class="grid cards" markdown>
 
@@ -70,7 +66,8 @@ Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la v
     ---
 
     Reduir els costos associats al desenvolupament i manteniment de sistemes.
-
+</div>
+<div class="grid cards" markdown>
 -   :material-rocket-launch:{ .lg .middle } __Acceleració de lliuraments__
 
     ---
@@ -89,3 +86,5 @@ Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la v
     Us convidem a explorar les diferents eines i recursos que el MAT posa a la vostra disposició. Junts, estem construint el futur digital de Catalunya.
 
 
+[Descobreix el MAT :octicons-arrow-right-24:](index2.md){ .md-button .md-button--primary }
+[Continuous Deployment Pipeline](../mat/pipeline.md){ .md-button }

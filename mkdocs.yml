@@ -209,8 +209,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: grey
-      accent: red
+      primary: custom
+      accent: custom
       font:
        code: Roboto Mono
       toggle:
@@ -220,8 +220,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: red
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -468,9 +468,8 @@ theme:
   # | Read More:                                                                                             |
   # | - https://www.mkdocs.org/user-guide/configuration/#extra_css                                           |
   # |                                                                                                        |
-  # +--------------------------------------------------------------------------------------------------------+
-  extra_css:
-    - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
   # +--------------------------------------------------------------------------------------------------------+
   # |                                                                                                        |
   # | Similar to the "extra_css" option does the "extra_javascript" option allow you to set custom JS files  |

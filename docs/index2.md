@@ -33,6 +33,9 @@ El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI
     
     Visualització de mètriques i resultats en temps real.
 
+</div>
+<div class="grid cards" markdown>
+
 -   :material-shield-check:{ .lg .middle } __Qualitat Garantida__
     
     ---
@@ -80,7 +83,7 @@ El **Marc d'Automatització de Testing (MAT)** és la solució integral del CTTI
 <div class="grid cards" markdown>
 
 -   :fontawesome-solid-book:{ .lg .middle } [Documentació Completa](../docs/index.md)
--   :fontawesome-solid-play-circle:{ .lg .middle } [Tutorials en Vídeo](../tutorials/index.md)
+-   :material-play-circle:{ .lg .middle } [Tutorials en Vídeo](../tutorials/index.md)
 -   :fontawesome-solid-code-branch:{ .lg .middle } [Repositori GitHub](https://github.com/ctti-dev/mat)
 
 </div>

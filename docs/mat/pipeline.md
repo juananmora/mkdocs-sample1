@@ -114,6 +114,9 @@ Els següents paràmetres s’utilitzen per configurar l'execució de la pipelin
 
 - :fontawesome-solid-magnifying-glass-chart: **Monitoratge en Temps Real**
 - :fontawesome-solid-code-branch: **Control de Versions**
+
+</div>
+<div class="grid cards" markdown>
 - :fontawesome-solid-robot: **Automatització Intel·ligent**
 - :fontawesome-solid-shield-halved: **Seguretat Integrada**
 
