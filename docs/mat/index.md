@@ -1,5 +1,8 @@
-# MAT - Marc d'Automatització de Testing
-
+---
+hide:
+  - navigation
+  #- toc
+---
 <div class="grid cards" markdown>
 
 -   :material-test-tube:{ .lg .middle } __Plataforma Integral__

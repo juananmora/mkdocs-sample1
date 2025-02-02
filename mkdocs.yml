@@ -93,14 +93,20 @@ repo_url: https://github.com/juananmora/mkdocs-sample1
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 nav:
-- Welcome: mat/index.md
-- Mermaid: index2.md
-- About: about.md
+- What is MAT: index2.md
+- Features: mat/index.md
+- Installation: mat/installation.md
+- Configuration: mat/configuration.md
+- Usage: mat/usage.md
+- Changelog: mat/changelog.md
+- License: mat/license.md
+- Contact: mat/contact.md
+#- About: about.md
 - Type of Tests:
   -   Continuous Testing: 
-      - Pipeline Microserveis PRE: mat/pipeline.md
-      - Pipeline Legacy PRE: mat/pipeline.md
-      - Pipeline PRO: mat/pipeline.md
+      - Microserveis PRE: mat/pipeline.md
+      - Legacy PRE: tdest.md
+      - Producció: c.md
   -   Test Funcionales:
       - Selenium: tests/selenium.md
       - Playwright: test.md

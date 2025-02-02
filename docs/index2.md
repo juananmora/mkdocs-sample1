@@ -1,5 +1,11 @@
+---
+hide:
+  - navigation
+  #- toc
+---
+
 <div class="hero" markdown>
-![MAT Logo](./images/gencat.png){ align=center width="45000" }
+![MAT Logo](./images/Designer.jpeg){ align=center width="4500" }
 
 ## Transformant el Futur del Desenvolupament de Software
 
