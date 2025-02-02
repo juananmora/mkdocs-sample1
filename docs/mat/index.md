@@ -3,6 +3,10 @@ hide:
   - navigation
   #- toc
 ---
+
+<div class="hero" markdown>
+![MAT Logo](../images/Designer.jpeg){ align=center width="4500" }
+
 <div class="grid cards" markdown>
 
 -   :material-test-tube:{ .lg .middle } __Plataforma Integral__

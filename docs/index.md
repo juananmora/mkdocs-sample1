@@ -52,7 +52,7 @@ Us convidem a explorar les diferents eines i recursos que el **MAT** posa a la v
 <div class="hero" markdown>
 
 
-[Descobreix el MAT :octicons-arrow-right-24:](../about.md){ .md-button .md-button--primary }
+[Descobreix el MAT :octicons-arrow-right-24:](index2.md){ .md-button .md-button--primary }
 [Continuous Deployment Pipeline](../mat/pipeline.md){ .md-button }
 
 </div>

@@ -5,7 +5,7 @@ hide:
 ---
 
 <div class="hero" markdown>
-![MAT Logo](./images/Designer.jpeg){ align=center width="4500" }
+![MAT Logo](./images/banner.jpeg){ align=center width="4500" }
 
 ## Transformant el Futur del Desenvolupament de Software
 
