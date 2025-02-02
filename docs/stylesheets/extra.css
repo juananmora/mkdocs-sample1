@@ -1,30 +1,52 @@
+/* VARIABLES PERSONALITZADES */
+/* Forcem el color primari i d'accent a #C00000 (vermell corporatiu) */
+:root {
+  --md-text-link-color: #C00000;
+  --md-primary-fg-color: #C00000;
+  --md-accent-fg-color: #C00000;
+  /* Altres variables poden ser ajustades aquí si cal */
+}
+
+
+/* HEADER */
+/* Forcem el fons del header a vermell corporatiu (#C00000) i el text en blanc */
+.md-header,
+.md-header__inner {
+  background-color: #C00000 !important;
+}
+
+.md-header__title,
+.md-header a,
+.md-header .md-nav__link {
+  color: #FFFFFF !important;
+}
+
 /* Active tab bold & color */
 .md-tabs__link {
   font-size: .75rem !important;
 }
 .md-tabs__link--active {
   font-weight: bold !important;
-  /* Utilitzem el rodal vermell corporatiu */
-  color: #C00000 !important;
+  color: var(--md-accent-fg-color) !important; /* ara serà #C00000 */
 }
 .md-tabs__link:hover {
-  color: #C00000 !important;
+  color: var(--md-accent-fg-color) !important;
 }
 
-/* Navigation bar active color */
+/* navigation bar active color*/
 .md-nav__item .md-nav__link--active {
   font-weight: bold !important;
   font-size: .75rem !important;
-  color: #C00000 !important;
+  color: var(--md-accent-fg-color) !important;
 }
 
-/* Frontpage elements */
+/* frontpage elements */
 .tx-hero h1 {
   font-size: 2.41rem !important;
 }
 a.md-button.md-button--primary {
-  background-color: #C00000; /* Vermell corporatiu */
-  border-color: #C00000;
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
   color: #ffffff;
 }
 a.md-button.md-button--primary:hover {
@@ -68,7 +90,7 @@ table tr th :last-child, table tr td :last-child {
 }
 
 /* Admonition settings option */
-/* Actualitzem amb el color vermell corporatiu #C00000 i corregim la sintaxi rgba */
+/* Forcem el color de la línia i del títol amb el vermell corporatiu */
 .md-typeset .admonition.settings, 
 .md-typeset details.settings {
   border-left: .22rem solid #C00000;
@@ -92,7 +114,6 @@ table tr th :last-child, table tr td :last-child {
 }
 
 /* mkdocstrings styling */
-/* Indentation for doc-contents */
 div.doc-contents:not(.first) {
   padding-left: 25px;
   border-left: 4px solid rgba(230, 230, 230);

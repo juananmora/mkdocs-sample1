@@ -27,7 +27,7 @@
 # | - https://www.mkdocs.org/user-guide/configuration/#site_url                                            |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-site_name: CTTI MAT
+site_name: Marc d'Automatització de Testing
 site_description: 'A template for future MkDocs wikis'
 site_author: 'juananmora'
 #site_url: 'https://www.andre601.ch/mkdocs-template' # Uncomment to set a canonical URL
@@ -135,7 +135,7 @@ plugins:
   - glightbox # Per funcionalitat de zoom d'imatges
 
 theme:
-  logo: assets/idbh.png
+  logo: assets/gencatwhite.png
   #favicon: assests/senyal.jpg
   icon:
     previous: fontawesome/solid/angle-left
@@ -203,7 +203,7 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: amber
+      primary: grey
       accent: red
       font:
        code: Roboto Mono
@@ -265,7 +265,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-  #accent: 'orange'
+  #accent: 'amber'
     
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
@@ -341,47 +341,47 @@ theme:
     # - header.autohide
     # - navigation.expand
     - navigation.footer
-    - navigation.indexes
+    #- navigation.indexes
     # - navigation.instant
     # - navigation.instant.prefetch
     # - navigation.instant.progress
     # - navigation.prune
     #- navigation.sections
-    - navigation.tabs
+    #- navigation.tabs
     # - navigation.tabs.sticky
-    - navigation.top
+    #- navigation.top
     - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
+    #- search.highlight
+    #- search.share
+    #- search.suggest
     - toc.follow
     - navigation.path
-    # - toc.integrate 
+    #- toc.integrate 
  
   # Announce
   #
-  #- announce.dismiss # Adds a "X" button to dismiss a news banner/mark it as read.*
+    #- announce.dismiss # Adds a "X" button to dismiss a news banner/mark it as read.*
   
   #Header
   #
-  #- header.autohide # Hide header when user scrolls past a specific point.
+    #- header.autohide # Hide header when user scrolls past a specific point.
   
   #Navigation:
   #
-  #- navigation.expand      # Expand all collapsable sections.
-  #- navigation.instant     # Instant loading pages.
-  #- navigation.indexes     # Attach pages directly to Sections. Incompatible with "toc.integrate"
-  #- navigation.sections    # Render top sections as groups.
-  #- navigation.tabs         # Render top sections as tabs at the top.
-  #- navigation.tabs.sticky # Tabs won't disappear when scrolling down. Requires "navigation.tabs".
-  #- navigation.top         # Adds a "Back to top" that is shown when scrolling up.
-  #- navigation.tracking    # Updates the url with highlighted section anchor.
+    - navigation.expand      # Expand all collapsable sections.
+    - navigation.instant     # Instant loading pages.
+    - navigation.indexes     # Attach pages directly to Sections. Incompatible with "toc.integrate"
+    - navigation.sections    # Render top sections as groups.
+    - navigation.tabs         # Render top sections as tabs at the top.
+    - navigation.tabs.sticky # Tabs won't disappear when scrolling down. Requires "navigation.tabs".
+    - navigation.top         # Adds a "Back to top" that is shown when scrolling up.
+    - navigation.tracking    # Updates the url with highlighted section anchor.
   
   # Search
   #
-  #- search.highlight # Search will highlight the searched word(s) on the page.*
-  #- search.share     # Adds an option to share a search query link.*
-  #- search.suggest   # Search will suggest the likeliest completion for a word.*
+    - search.highlight # Search will highlight the searched word(s) on the page.*
+    - search.share     # Adds an option to share a search query link.*
+    - search.suggest   # Search will suggest the likeliest completion for a word.*
   
   # Table of Contents
   #
