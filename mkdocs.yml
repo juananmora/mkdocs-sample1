@@ -139,7 +139,6 @@ plugins:
   # third party plugins
   - mkdocstrings
   - glightbox # Per funcionalitat de zoom d'imatges
-  - mermaid2 # Per funcionalitat de diagrames
 
 theme:
   logo: assets/gencatwhite.png
