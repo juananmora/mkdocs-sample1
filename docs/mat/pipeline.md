@@ -7,7 +7,7 @@
     El procés de Continuous Deployment està completament automatitzat, assegurant una entrega ràpida i consistent!
 
 <figure markdown>
-  ![Diagrama de Continuous Deployment](../images/pipeline.png){ loading=lazy }
+  ![Diagrama de Continuous Deployment](../images/pipeline.png){ loading=lazy  width="1200"}
   <figcaption>Diagrama del procés de Continuous Deployment</figcaption>
 </figure>
 
