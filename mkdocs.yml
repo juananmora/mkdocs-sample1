@@ -97,7 +97,7 @@ nav:
 - Features: mat/index.md
 - Installation: mat/installation.md
 - Configuration: mat/configuration.md
-- Usage: mat/usage.md
+- Usage: usage/functional.md
 - Changelog: mat/changelog.md
 - License: mat/license.md
 - Contact: mat/contact.md
@@ -139,6 +139,7 @@ plugins:
   # third party plugins
   - mkdocstrings
   - glightbox # Per funcionalitat de zoom d'imatges
+  - mermaid2 # Per funcionalitat de diagrames
 
 theme:
   logo: assets/gencatwhite.png
