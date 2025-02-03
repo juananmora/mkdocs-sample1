@@ -230,24 +230,3 @@ També es pot consultar l'estat general del projecte en taulers com els de Jira 
 
 ---
 
-### Diagrama de Flux de Selenium Grid
-
-```mermaid
-%%{init: {'theme':'neutral'}}%%
-flowchart LR
-    A[Docker Compose: Selenium Hub]
-    B[Nodes Chrome (3)]
-    C[Nodes Firefox (3)]
-    D[Nodes Edge (1)]
-    E[Selenium Grid WebUI]
-    F[Execució de Proves]
-    
-    A --> B
-    A --> C
-    A --> D
-    B --> E
-    C --> E
-    D --> E
-    E --> F
-
-```
