@@ -1,0 +1,293 @@
+/* VARIABLES PERSONALITZADES */
+:root {
+  --md-text-link-color: #C00000;
+  --md-primary-fg-color: #4D4D4D; /* Gris corporatiu de la Generalitat */
+  --md-accent-fg-color: #C00000;
+  --md-typeset-a-color: #C00000; /* Color dels enllaços */
+}
+
+/* HEADER */
+.md-header,
+.md-header__inner {
+  background-color: var(--md-primary-fg-color) !important;
+}
+
+.md-header__title,
+.md-header a,
+.md-header .md-nav__link {
+  color: #FFFFFF !important;
+}
+
+/* Active tab bold & color */
+.md-tabs__link {
+  font-size: .75rem !important;
+}
+.md-tabs__link--active {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+.md-tabs__link:hover {
+  color: #FFFFFF !important;
+  opacity: 0.7;
+}
+
+/* Navigation bar active color */
+.md-nav__item .md-nav__link--active {
+  font-weight: bold !important;
+  font-size: .75rem !important;
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Frontpage elements */
+.tx-hero h1 {
+  font-size: 2.41rem !important;
+  text-align: left !important;
+}
+a.md-button.md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #ffffff;
+}
+a.md-button.md-button--primary:hover {
+  background-color: #A30000;
+  border-color: #A30000;
+  color: #ffffff;
+}
+a.md-button.md-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Reducir espaciado entre títulos */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+  line-height: 1.2 !important;  /* Ajusta la altura de línea según convenga */
+}
+
+/* Reducir espaciado entre párrafos ssss*/
+.md-typeset p {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+  line-height: 1.3 !important;  /* Puedes ajustar este valor a 1.2 o 1.3 */
+}
+
+/* Corrección del diseño de bullets */
+.md-typeset ul {
+  list-style-type: disc !important; /* Restaurar el estilo predeterminado */
+  padding-left: 1.5em !important; /* Ajustar el margen izquierdo */
+  margin-left: 0 !important;
+  text-align: left !important; /* Asegurar alineación izquierda */
+}
+
+.md-typeset ul li {
+  position: relative;
+  padding-left: 0.5em !important; /* Espacio entre el punto y el texto */
+  text-align: left !important; /* Evitar que el texto quede centrado */
+  display: list-item !important; /* Asegurar que los bullets se comporten como lista */
+}
+
+.md-typeset ul li::before {
+  content: "•";
+  color: var(--md-accent-fg-color);
+  font-weight: bold;
+  position: absolute;
+  left: -1em !important; /* Ajuste para mejorar la alineación */
+}
+
+/* Corrección para listas dentro de .grid.cards */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem; /* Espaciado entre elementos */
+  margin-top: 1rem; /* Espaciado superior */
+}
+
+
+.grid.cards ul {
+  list-style-type: none !important;
+  padding-left: 1 !important;
+}
+
+.grid.cards li {
+  display: flex !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+
+.grid.cards li::before {
+  content: none !important;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  text-align: left !important;
+}
+table th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+}
+table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Admonition settings option */
+.md-typeset .admonition.settings, 
+.md-typeset details.settings {
+  border-left: .22rem solid var(--md-accent-fg-color);
+}
+.md-typeset .admonition.settings > .admonition-title, 
+.md-typeset details.settings > .admonition-title, 
+.md-typeset details.settings > summary {
+  border-bottom: .1rem solid rgba(192, 0, 0, 0.4);
+  background-color: rgba(192, 0, 0, 0.1);
+}
+.md-typeset .admonition.settings > .admonition-title:before, 
+.md-typeset details.settings > .admonition-title:before, 
+.md-typeset details.settings > summary:before {
+  color: var(--md-accent-fg-color);
+  content: "settings";
+}
+
+/* Site width etc. */
+.md-grid {
+  max-width: 64rem !important;
+}
+
+/* mkdocstrings styling */
+div.doc-contents:not(.first) {
+  padding-left: 25px;
+  border-left: 4px solid rgba(230, 230, 230);
+  margin-bottom: 80px;
+}
+
+.hero {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  text-align: left !important; /* Asegurar alineación izquierda */
+}
+
+.grid.cards img {
+  border-radius: 8px;
+}
+
+.glightbox {
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.hero {
+  text-align: left !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.mat-logo {
+  width: 450px;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  text-align: left !important;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: left !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: #C00000;
+  margin-bottom: 1rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: left !important;
+  margin: 3rem 0;
+}
+
+.md-button {
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.md-button--primary {
+  background: #C00000;
+  border: 2px solid #C00000;
+  color: white !important;
+}
+
+.md-button--primary:hover {
+  background: #A30000;
+  border-color: #A30000;
+}
+
+/* Asegurar espaciado adecuado entre títulos y párrafos */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin-bottom: 0.5em !important; /* Espacio debajo de los títulos */
+  font-weight: bold !important;
+}
+
+.md-typeset p {
+  margin-top: 0.5em !important; /* Espacio encima de los párrafos */
+}
+
+.mat-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Centrar correctamente */
+}
+
+
+/* Hacer que el footer tenga el mismo color que la cabecera */
+.md-footer {
+  background-color: var(--md-primary-fg-color) !important;
+  color: #4D4D4D !important;
+}
+
+.md-footer a {
+  color: #FFFFFF !important; /* Enlaces en blanco */
+}
+
+.md-footer a:hover {
+  opacity: 0.7;
+}
+
